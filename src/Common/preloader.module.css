@@ -1,0 +1,12 @@
+.main {
+  flex: 1 1 auto;
+  background-color: #8f949a;
+  display: flex;
+  align-items: center;
+}
+
+.gif {
+  margin: 0 auto;
+  z-index: 100;
+}
+

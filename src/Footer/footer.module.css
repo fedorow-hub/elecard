@@ -1,0 +1,16 @@
+.footer {
+  background-color: #2b3844;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 15px 15px;
+}
+
+.content {
+  color: #fff;
+}

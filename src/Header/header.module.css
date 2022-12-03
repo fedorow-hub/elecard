@@ -1,0 +1,28 @@
+.header {
+  background-color: #2b3844;
+  position: fixed;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 15px 15px;
+}
+
+.logo {
+  height: 35px;
+  width: 35px;
+}
+
+.label {
+  color: #fff;
+}
+
+.label:not(:last-child) {
+  margin-right: 10px;
+}
+
