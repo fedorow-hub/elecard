@@ -11,9 +11,10 @@ type PropsType = {
   currentPage: number
   cardsPerPage: number
   setCurrentPage: (page: number) => void
+  deleteCard: (timestamp: number) => void
 }
 
-const Cards: React.FC<PropsType> = ({cards, currentPage, cardsPerPage, setCurrentPage})  => {
+const Cards: React.FC<PropsType> = ({cards, currentPage, cardsPerPage, setCurrentPage, deleteCard})  => {
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
   const currentCards = cards.slice(firstCardIndex, lastCardIndex)
@@ -25,10 +26,10 @@ const Cards: React.FC<PropsType> = ({cards, currentPage, cardsPerPage, setCurren
     <div className={s.content}>
       <div className={s.cardBox}>
         {
-          currentCards.map(u => <Card card={u} key={u.timestamp} />)
+          currentCards.map(u => <Card card={u} deleteCard={deleteCard} key={u.timestamp} />)
         }
       </div>
-      <Pagination cardsPerPage={cardsPerPage} totalCards={cards.length} paginate={paginate}/>
+      <Pagination cardsPerPage={cardsPerPage} totalCards={cards.length} currentPage={currentPage} paginate={paginate}/>
 
     </div>
   )

@@ -4,10 +4,11 @@ import s from "./paginator.module.css"
 type PropsType = {
   cardsPerPage: number,
   totalCards: number,
-  paginate: (page: number) => void
+  paginate: (page: number) => void,
+  currentPage: number
 }
 
-const Paginator: React.FC<PropsType> = ({cardsPerPage, totalCards, paginate}) => {
+const Paginator: React.FC<PropsType> = ({cardsPerPage, totalCards, currentPage, paginate}) => {
   const pageNumbers = [];
   for(let i = 1; i<= (totalCards / cardsPerPage); i++) {
     pageNumbers.push(i)
@@ -18,7 +19,7 @@ const Paginator: React.FC<PropsType> = ({cardsPerPage, totalCards, paginate}) =>
       <ul className={s.list}>
         {
           pageNumbers.map(number => (
-            <li className={s.item} key={number}>
+            <li className={currentPage === number? s.selectedPage: s.item} key={number}>
               <a href="#" onClick={()=>paginate(number)}>
                 {number}
               </a>

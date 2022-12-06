@@ -2,9 +2,11 @@ import {applyMiddleware, combineReducers, legacy_createStore as createStore, com
 
 import thunkMiddleware from 'redux-thunk';
 import cardReducer from './card-reducer';
+import funcReducer from "./func-reducer";
 
 const rootReducer = combineReducers({
-  cards: cardReducer
+  cards: cardReducer,
+  func: funcReducer
 });
 
 type RootReducerType = typeof rootReducer
