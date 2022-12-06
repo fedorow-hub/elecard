@@ -1,7 +1,7 @@
 import React from "react";
-import {CardType} from "../Types/types";
+import {CardType} from "../../Types/types";
 import s from "./content.module.css";
-import imageDel from "./../img/delete.svg"
+import imageDel from "../../img/delete.svg"
 
 type PropsType = {
   card: CardType

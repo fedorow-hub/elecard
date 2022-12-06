@@ -21,6 +21,7 @@
 
 .label {
   color: #fff;
+  cursor: pointer;
 }
 
 .label:not(:last-child) {

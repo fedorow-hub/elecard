@@ -42,5 +42,4 @@ type SetIsCardsViewActionType = {
 
 export const setIsCardsView = (isCardsView: boolean): SetIsCardsViewActionType => ({ type: SET_IS_CARDS_VIEW, isCardsView });
 
-
 export default funcReducer;

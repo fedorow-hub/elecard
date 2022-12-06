@@ -3,20 +3,18 @@ import './App.module.css';
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import s from "./App.module.css";
-import CardsContainer from "../Content/cardsContainer";
+import CardsContainer from "../Content/CardContent/cardsContainer";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/store";
 import {getIsCardsView} from "../Redux/func-selector";
-import TreeViewContainer from "../Content/treeViewContainer";
+import TreeViewContainer from "../Content/TreeViewContent/treeViewContainer";
 
 type MapStateToPropsType = {
     isCardsView: boolean
 }
 
-type MapDispatchToPropsType = {
-
-}
+type MapDispatchToPropsType = {}
 
 type OwnPropsType = {}
 
@@ -43,7 +41,4 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 
 export default compose(
     connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>(mapStateToProps,
-        {
-
-        })
-)(App);
+        {}))(App);

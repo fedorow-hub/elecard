@@ -6,9 +6,7 @@ import {connect} from "react-redux";
 import {AppStateType} from "../Redux/store";
 import {setIsCardsView} from "../Redux/func-reducer";
 
-type MapStateToPropsType = {
-
-}
+type MapStateToPropsType = {}
 
 type MapDispatchToPropsType = {
   setIsCardsView: (isCardsView: boolean) => void
@@ -25,7 +23,6 @@ const Header: React.FC<PropsType> = ({setIsCardsView}) => {
     setValue(e.target.value);
     if(e.target.value === "1") {
       setIsCardsView(true);
-
     }
     if(e.target.value === "2") {
       setIsCardsView(false);

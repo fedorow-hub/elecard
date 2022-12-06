@@ -1,18 +1,17 @@
-
 import {connect} from 'react-redux';
 
 import React from 'react';
 
 import {compose} from 'redux';
 
-import Preloader from '../Common/Preloader';
-import {getIsFetching, getCards} from '../Redux/card-selector';
-import {getCurrentPage, getCardsPerPage} from '../Redux/func-selector';
-import {CardType} from '../Types/types';
-import {AppStateType} from '../Redux/store';
+import Preloader from '../../Common/Preloader';
+import {getIsFetching, getCards} from '../../Redux/card-selector';
+import {getCurrentPage, getCardsPerPage} from '../../Redux/func-selector';
+import {CardType} from '../../Types/types';
+import {AppStateType} from '../../Redux/store';
 
-import {deleteCardWithLocalStorage, setAllCards} from "../Redux/card-reducer";
-import {setCurrentPage} from "../Redux/func-reducer";
+import {deleteCardWithLocalStorage, setAllCards} from "../../Redux/card-reducer";
+import {setCurrentPage} from "../../Redux/func-reducer";
 import Cards from "./cards";
 import Sidebar from "./Sidebar/sidebar";
 import s from "./content.module.css";

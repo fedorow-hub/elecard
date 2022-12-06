@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import s from "./sidebar.module.css"
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {AppStateType} from "../../Redux/store";
-import {setCurrentPage} from "../../Redux/func-reducer";
-import {recoveryCard, setCategory, sortByDate, sortBySize} from "../../Redux/card-reducer";
+import {AppStateType} from "../../../Redux/store";
+import {setCurrentPage} from "../../../Redux/func-reducer";
+import {recoveryCard, setCategory, sortByDate, sortBySize} from "../../../Redux/card-reducer";
 
-type MapStateToPropsType = {
-
-}
+type MapStateToPropsType = {}
 
 type MapDispatchToPropsType = {
     setCategory: (category: string) => void
@@ -30,7 +28,7 @@ const Sidebar: React.FC<PropsType> = ({setCategory, sortByDate, sortBySize, setC
         setValue(e.target.value);
         if(e.target.value === "1") {
             sortByDate();
-            setCurrentPage(2);//костыли, чтобы вызвать перерендер
+            setCurrentPage(2);//костыли, чтобы вызвать переперерендер
             setCurrentPage(1);
         }
         if(e.target.value === "2") {

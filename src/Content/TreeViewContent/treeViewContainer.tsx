@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {AppStateType} from "../Redux/store";
-import {getCards} from "../Redux/card-selector";
-import {CardType} from "../Types/types";
+import {AppStateType} from "../../Redux/store";
+import {getCards} from "../../Redux/card-selector";
+import {CardType} from "../../Types/types";
 import s from "./treeViewContainer.module.css"
-import close from "./../img/delete.svg";
+import close from "../../img/delete.svg";
 import "./treeViewContainer.css";
 
 type MapStateToPropsType = {
@@ -30,8 +30,7 @@ const TreeViewContainer: React.FC<PropsType> = ({cards}) => {
     const [popup, setPopup] = useState(['', false]);
 
     useEffect(() => {
-        const parentElement = document.querySelector('.treeViewContainer_main__1s4mG');
-
+        const parentElement = document.querySelector('.main');
         if(popup[1]) {
             const elementPopupBody = document.createElement('div');
             elementPopupBody.className = 'popup';
@@ -60,7 +59,7 @@ const TreeViewContainer: React.FC<PropsType> = ({cards}) => {
     },[popup]);
 
     return (
-        <div className={s.main}>
+        <div className="main">
             <div className={s.container}>
                 <div className={s.treeHTML}>
                     <h2>

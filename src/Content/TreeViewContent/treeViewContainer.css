@@ -1,3 +1,11 @@
+.main {
+    flex: 1 1 auto;
+    background-color: #8f949a;
+    height: 84vh;
+    overflow: auto;
+    padding-top: 66px;
+}
+
 .popup {
     position: fixed;
     width: 100%;
@@ -7,7 +15,6 @@
     left: 0;
     z-index: 20;
 }
-
 
 .popupBody {
     min-height: 100vh;

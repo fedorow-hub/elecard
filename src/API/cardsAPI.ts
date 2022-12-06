@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-import {CardType} from "../Types/types";
-
-
 export const CardAPI = {
   getCards () {
     let data = axios.get(`http://contest.elecard.ru/frontend_data/catalog.json`).then(response => response.data);
