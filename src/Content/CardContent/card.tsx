@@ -26,6 +26,9 @@ const Card: React.FC<PropsType> = ({card, deleteCard}) => {
         <img src={imageDel} alt="delete"/>
       </button>
       <div className={s.bodyInfo}>
+          <div>
+              Имя файла: {card.image.split('/').pop()}
+          </div>
         <div>
           Размер файла: {card.filesize} байт
         </div>

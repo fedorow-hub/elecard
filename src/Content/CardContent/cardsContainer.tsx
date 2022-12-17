@@ -5,7 +5,7 @@ import React from 'react';
 import {compose} from 'redux';
 
 import Preloader from '../../Common/Preloader';
-import {getIsFetching, getCards} from '../../Redux/card-selector';
+import {getIsFetching, getCards, getToggle} from '../../Redux/card-selector';
 import {getCurrentPage, getCardsPerPage} from '../../Redux/func-selector';
 import {CardType} from '../../Types/types';
 import {AppStateType} from '../../Redux/store';
@@ -21,6 +21,7 @@ type MapStateToPropsType = {
   cardsOnCategory: Array<CardType>
   currentPage: number
   cardsPerPage: number
+  toggle: boolean
 }
 
 type MapDispatchToPropsType = {
@@ -61,7 +62,8 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     cardsOnCategory: getCards(state),
     isFetching: getIsFetching(state),
     currentPage: getCurrentPage(state),
-    cardsPerPage: getCardsPerPage(state)
+    cardsPerPage: getCardsPerPage(state),
+    toggle: getToggle(state)
   };
 };
 

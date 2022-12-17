@@ -28,3 +28,49 @@
   margin-right: 10px;
 }
 
+/*.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}*/
+
+.input ~ span {
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.input + span {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #fff;
+  transition: border-color .3s ease;
+}
+
+.input + span::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #C283F3;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.input:checked + span:before {
+   opacity: 1;
+ }
+
+
+
+

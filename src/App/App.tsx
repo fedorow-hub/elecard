@@ -7,20 +7,28 @@ import CardsContainer from "../Content/CardContent/cardsContainer";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/store";
-import {getIsCardsView} from "../Redux/func-selector";
+import {getCardsPerPage, getCurrentPage, getIsCardsView} from "../Redux/func-selector";
 import TreeViewContainer from "../Content/TreeViewContent/treeViewContainer";
+import {setCurrentPage} from "../Redux/func-reducer";
+import {getCards} from "../Redux/card-selector";
+import {CardType} from "../Types/types";
 
 type MapStateToPropsType = {
-    isCardsView: boolean
+    isCardsView: boolean,
+    currentPage: number,
+    cardsPerPage: number,
+    cardsOnCategory: Array<CardType>
 }
 
-type MapDispatchToPropsType = {}
+type MapDispatchToPropsType = {
+    setCurrentPage: (page: number) => void
+}
 
 type OwnPropsType = {}
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType & OwnPropsType
 
-const App: React.FC<PropsType> =({isCardsView}) => {
+const App: React.FC<PropsType> =({isCardsView, currentPage, cardsPerPage, cardsOnCategory, setCurrentPage}) => {
   return (
     <div className={s.wrapper}>
       <Header/>
@@ -28,17 +36,20 @@ const App: React.FC<PropsType> =({isCardsView}) => {
           ?<CardsContainer/>
           :<TreeViewContainer/>
       }
-      <Footer/>
+      <Footer currentPage = {currentPage} cardsPerPage = {cardsPerPage} setCurrentPage = {setCurrentPage} cards = {cardsOnCategory}/>
     </div>
   );
 }
 
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return{
-        isCardsView: getIsCardsView(state)
+        isCardsView: getIsCardsView(state),
+        currentPage: getCurrentPage(state),
+        cardsPerPage: getCardsPerPage(state),
+        cardsOnCategory: getCards(state)
     };
 };
 
 export default compose(
     connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>(mapStateToProps,
-        {}))(App);
+        {setCurrentPage}))(App);

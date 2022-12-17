@@ -2,7 +2,6 @@ import React from "react";
 
 import {CardType} from '../../Types/types';
 import s from './content.module.css'
-import Pagination from './Paginator/paginator'
 
 import Card from './card';
 
@@ -17,10 +16,7 @@ type PropsType = {
 const Cards: React.FC<PropsType> = ({cards, currentPage, cardsPerPage, setCurrentPage, deleteCard})  => {
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
-  const currentCards = cards.slice(firstCardIndex, lastCardIndex)
-
-
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const currentCards = cards.slice(firstCardIndex, lastCardIndex);
 
   return (
     <div className={s.content}>
@@ -29,7 +25,6 @@ const Cards: React.FC<PropsType> = ({cards, currentPage, cardsPerPage, setCurren
           currentCards.map(u => <Card card={u} deleteCard={deleteCard} key={u.timestamp} />)
         }
       </div>
-      <Pagination cardsPerPage={cardsPerPage} totalCards={cards.length} currentPage={currentPage} paginate={paginate}/>
 
     </div>
   )

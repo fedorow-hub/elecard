@@ -17,10 +17,8 @@ type OwnPropsType = {}
 type PropsType = MapStateToPropsType & MapDispatchToPropsType & OwnPropsType
 
 const Header: React.FC<PropsType> = ({setIsCardsView}) => {
-  const [value, setValue] = useState(1);
 
   function changeValue(e: any) {
-    setValue(e.target.value);
     if(e.target.value === "1") {
       setIsCardsView(true);
     }
@@ -36,14 +34,17 @@ const Header: React.FC<PropsType> = ({setIsCardsView}) => {
         <div>
           <label className={s.label}>
             <input type="radio" name="radio" value="1"
-                   checked={value === 1 ? true : false}
+                   className={"visually-hidden" + ' ' + s.input}
                    onChange={changeValue} />
+            <span></span>
             Карточки
           </label>
           <label className={s.label}>
             <input type="radio" name="radio" value="2"
-                   checked={value === 2 ? true : false}
+                   className={"visually-hidden" + ' ' + s.input}
+
                    onChange={changeValue} />
+            <span></span>
             Древовидный список
           </label>
         </div>
