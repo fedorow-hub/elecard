@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./header.module.css";
 import logo from "./../img/Beats_by_Dr_Dre_logo-1.svg";
 import {compose} from "redux";
@@ -34,15 +34,14 @@ const Header: React.FC<PropsType> = ({setIsCardsView}) => {
         <div>
           <label className={s.label}>
             <input type="radio" name="radio" value="1"
-                   className={"visually-hidden" + ' ' + s.input}
+                   className={"visually-hidden " + s.input}
                    onChange={changeValue} />
             <span></span>
             Карточки
           </label>
           <label className={s.label}>
             <input type="radio" name="radio" value="2"
-                   className={"visually-hidden" + ' ' + s.input}
-
+                   className={"visually-hidden " + s.input}
                    onChange={changeValue} />
             <span></span>
             Древовидный список

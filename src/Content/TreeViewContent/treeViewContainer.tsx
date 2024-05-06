@@ -21,9 +21,9 @@ type PropsType = MapStateToPropsType & MapDispatchToPropsType & OwnPropsType
 const TreeViewContainer: React.FC<PropsType> = ({cards}) => {
 
     const setImages = (category: string): any => {
-        return cards.filter(card => card.category == category)
+        return cards.filter(card => card.category === category)
             .map(u => <button className={s.link} key={u.timestamp} onClick={()=>setPopup([u.image, true])}>
-                <img className={s.image} src={`http://contest.elecard.ru/frontend_data/${u.image}`}/></button>
+                <img className={s.image} src={`http://contest.elecard.ru/frontend_data/${u.image}`} alt="картинка"/></button>
             )
     }
 

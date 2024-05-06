@@ -4,7 +4,7 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppStateType} from "../../../Redux/store";
 import {
-    recoveryCard,
+    recoveryCardWithLocalStorage,
     sortByCategory,
     sortByDate,
     sortByName,
@@ -18,15 +18,15 @@ type MapDispatchToPropsType = {
     sortBySize: () => void
     sortByName: () => void
     sortByCategory: () => void
-    recoveryCard: () => void
     toggle: () => void
+    recoveryCardWithLocalStorage: () => void
 }
 
 type OwnPropsType = {}
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType & OwnPropsType
 
-const Sidebar: React.FC<PropsType> = ({sortByDate, sortBySize, recoveryCard, sortByName, sortByCategory, toggle}) => {
+const Sidebar: React.FC<PropsType> = ({sortByDate, sortBySize, recoveryCardWithLocalStorage, sortByName, sortByCategory, toggle}) => {
 
     function changeValue(e: React.ChangeEvent<HTMLInputElement>) {
         if(e.target.value === "1") {
@@ -48,7 +48,7 @@ const Sidebar: React.FC<PropsType> = ({sortByDate, sortBySize, recoveryCard, sor
     }
 
     const recovery = () => {
-        recoveryCard()
+        recoveryCardWithLocalStorage()
     }
 
   return (
@@ -57,22 +57,26 @@ const Sidebar: React.FC<PropsType> = ({sortByDate, sortBySize, recoveryCard, sor
       <div className={s.selection}>
           <label className={s.label}>
               <input type="radio" name="radio" value="1"
-                     onChange={changeValue} />
+                     onChange={changeValue} className={"visually-hidden " + s.input}/>
+              <span></span>
               по дате
           </label>
           <label className={s.label}>
               <input type="radio" name="radio" value="2"
-                     onChange={changeValue} />
+                     onChange={changeValue} className={"visually-hidden " + s.input}/>
+              <span></span>
               по размеру файла
           </label>
           <label className={s.label}>
               <input type="radio" name="radio" value="3"
-                     onChange={changeValue} />
+                     onChange={changeValue} className={"visually-hidden " + s.input}/>
+              <span></span>
               по имени файла
           </label>
           <label className={s.label}>
               <input type="radio" name="radio" value="4"
-                     onChange={changeValue} />
+                     onChange={changeValue} className={"visually-hidden " + s.input}/>
+              <span></span>
               по категории
           </label>
       </div>
@@ -94,7 +98,7 @@ export default compose(
             sortBySize,
             sortByName,
             sortByCategory,
-            recoveryCard,
+            recoveryCardWithLocalStorage,
             toggle
         })
 )(Sidebar);

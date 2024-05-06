@@ -20,7 +20,7 @@ const Card: React.FC<PropsType> = ({card, deleteCard}) => {
   return (
     <div className={s.card}>
       <div className={s.imageWrap}>
-        <img className={s.image} src={`http://contest.elecard.ru/frontend_data/${card.image}`}/>
+        <img className={s.image} src={`http://contest.elecard.ru/frontend_data/${card.image}`} alt="Картинка"/>
       </div>
       <button className={s.button} onClick={tempDeleteCard}>
         <img src={imageDel} alt="delete"/>

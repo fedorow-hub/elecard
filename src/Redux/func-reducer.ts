@@ -28,14 +28,14 @@ type ActonTypes =
     | SetCurrentPageActionType
     | SetIsCardsViewActionType;
 
-type SetCurrentPageActionType = {
+export type SetCurrentPageActionType = {
     type: typeof SET_CURRENT_PAGE
     page: number
 }
 
 export const setCurrentPage = (page: number): SetCurrentPageActionType => ({ type: SET_CURRENT_PAGE, page });
 
-type SetIsCardsViewActionType = {
+export type SetIsCardsViewActionType = {
     type: typeof SET_IS_CARDS_VIEW
     isCardsView: boolean
 }

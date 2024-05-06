@@ -25,8 +25,42 @@
 }
 
 .button {
-  background-color: chocolate;
+  background-color: #C283F3;
   color: #fff;
   padding: 5px 10px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.input ~ span {
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.input + span {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #000;
+  transition: border-color .3s ease;
+}
+
+.input + span::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #C283F3;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.input:checked + span:before {
+  opacity: 1;
 }

@@ -1,0 +1,50 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin: 3px;
+}
+
+.item a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 27px;
+  height: 30px;
+}
+
+.selectedPage {
+  width: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin: 3px;
+  font-weight: bold;
+  border-color: #fff;
+}
+
+.selectedPage a {
+  text-decoration: none;
+  color: #C283F3;
+  display: block;
+  width: 27px;
+  height: 30px;
+}
+
+.paginator {
+  display: flex;
+}
+
+.button {
+  background-color: #C283F3;
+  color: #fff;
+}
+
+

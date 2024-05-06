@@ -47,10 +47,10 @@ class CardsContainer extends React.Component<PropsType> {
         {this.props.isFetching
           ? <Preloader/>
           : <Cards cards={this.props.cardsOnCategory}
-                   currentPage={this.props.currentPage}
-                   cardsPerPage={this.props.cardsPerPage}
-                   setCurrentPage = {this.props.setCurrentPage}
-                   deleteCard = {this.props.deleteCardWithLocalStorage}
+                  currentPage={this.props.currentPage}
+                  cardsPerPage={this.props.cardsPerPage}
+                  setCurrentPage = {this.props.setCurrentPage}
+                  deleteCard = {this.props.deleteCardWithLocalStorage}
           />}
       </div>
     </div>;

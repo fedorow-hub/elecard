@@ -2,14 +2,16 @@ import axios from 'axios';
 
 export const CardAPI = {
   getCards () {
-    let data = axios.get(`http://contest.elecard.ru/frontend_data/catalog.json`).then(response => response.data);
+    debugger
+    let data = axios.get(`http://contest.elecard.ru/frontend_data/catalog.json`)
+      .then(response => response.data);
 
     let resultData = data.then(
         result => {
           const arrayFromStorage = getNumbersFromStorage();
           for(let i = 0; i < arrayFromStorage.length; i++) {
             // @ts-ignore
-              result = result.filter(u => u.timestamp != arrayFromStorage[i])
+              result = result.filter(u => u.timestamp !== arrayFromStorage[i])
           }
           return result
         }
